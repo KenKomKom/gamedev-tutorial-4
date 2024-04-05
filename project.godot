@@ -18,6 +18,11 @@ config/name="Tutorial 4 Template"
 run/main_scene="res://scenes/Level1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://scripts/global.gd"
+Transition="*res://scenes/transition.tscn"
+
 [input]
 
 up={

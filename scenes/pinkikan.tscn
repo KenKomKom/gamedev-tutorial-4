@@ -21,6 +21,6 @@ wait_time = 10.0
 autostart = true
 
 [node name="losetrigger" parent="." instance=ExtResource( 3 )]
-sceneName = "LoseScreen"
+sceneName = "pinkikan"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/raw/CC Wild Words Roman.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/LinkButton.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[node name="levelselect" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 904.0
+margin_bottom = 520.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 139.0
+margin_right = 784.0
+margin_bottom = 191.0
+custom_fonts/font = SubResource( 2 )
+text = "LEVEL SELECTION"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 211.0
+margin_right = 784.0
+margin_bottom = 259.0
+
+[node name="ToLevel1" type="LinkButton" parent="VBoxContainer/VBoxContainer"]
+margin_right = 784.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0.811765, 0.505882, 0.505882, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Level 1"
+script = ExtResource( 2 )
+scene_to_load = "Level1"
+
+[node name="ToLevel2" type="LinkButton" parent="VBoxContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 784.0
+margin_bottom = 48.0
+focus_mode = 2
+custom_colors/font_color = Color( 0.811765, 0.505882, 0.505882, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Level 2"
+
+[node name="LinkButton3" type="LinkButton" parent="VBoxContainer"]
+margin_top = 279.0
+margin_right = 784.0
+margin_bottom = 301.0
+focus_mode = 2
+custom_colors/font_color = Color( 0.811765, 0.505882, 0.505882, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Return to Main menu"
+script = ExtResource( 2 )
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ToLevel1" to="VBoxContainer/VBoxContainer/ToLevel1" method="_on_ToLevel1_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ToLevel2" to="VBoxContainer/VBoxContainer/ToLevel1" method="_on_ToLevel2_pressed"]
+[connection signal="pressed" from="VBoxContainer/LinkButton3" to="VBoxContainer/LinkButton3" method="_on_ReturnToMain_pressed"]

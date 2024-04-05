@@ -10,6 +10,7 @@ func _ready():
 
 func spawn():
 	var spawned = obstacle.instance()
+	spawned.set_scene_name(get_tree().get_current_scene().get_name())
 	get_parent().add_child(spawned)
 
 	var spawn_pos = global_position
